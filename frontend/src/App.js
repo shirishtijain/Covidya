@@ -4,6 +4,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 import "./App.css";
+import { Stats } from './components/Homepage/Stats';
+
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
     <Route path="/register">
       <Register />
     </Route>
+    <Route path="/">
+      <Stats />
+    </Route>
+   
    
    
   </Switch>
