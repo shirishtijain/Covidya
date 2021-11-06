@@ -230,6 +230,12 @@ const Map = () => {
         property: active.property,
         stops: active.stops
       });
+      const popup = document.getElementsByClassName('mapboxgl-popup');
+    
+      while ( popup.length ) {
+       popup[0].remove();
+       }
+     
       map.on('click', 'covid-data', (e) => {
         new mapboxgl.Popup({ closeOnClick: true })
         .setLngLat(e.lngLat)
