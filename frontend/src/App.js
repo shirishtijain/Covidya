@@ -26,7 +26,7 @@ function App() {
       <Register />
           </Route>
         
-    <Route path="/">
+    <Route path="/data">
       <Stats />
     </Route>
    
