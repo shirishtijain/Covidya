@@ -5,7 +5,7 @@ import Register from './components/Register';
 
 import "./App.css";
 import { Stats } from './components/Homepage/Stats';
-
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -17,12 +17,22 @@ function App() {
     <Route path="/login">
       <Login />
     </Route>
+
+    <Route path="/footer">
+      <Footer />
+    </Route>
+
     <Route path="/register">
       <Register />
     </Route>
+
     <Route path="/">
       <Stats />
     </Route>
+
+   
+
+    {/* <Footer/> */}
    
    
    
