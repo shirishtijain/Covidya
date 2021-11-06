@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/Login';
 import Register from './components/Register';
 import Map from './components/Map/Map';
+import Footer from "./components/Footer/Footer"
 
 import "./App.css";
 import { Stats } from './components/Homepage/Stats';
@@ -23,12 +24,13 @@ function App() {
     </Route>
     <Route path="/register">
       <Register />
-    </Route>
+          </Route>
+        
     <Route path="/">
       <Stats />
     </Route>
    
-   
+  
    
   </Switch>
 </div>
