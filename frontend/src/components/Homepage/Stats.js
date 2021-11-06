@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Map from '../Map/Map';
 
 const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -30,11 +31,13 @@ export const Stats = () => {
     return (
 
         <div>
+               
             
-            <div className="container-fluid mt-5">
+            <div className="container-fluid mt-5" style={{display:"block"}}>
                 <div className="main-heading">
                     <h1 className="mb-5 text-center"><span className="font-weight-bold">INDIA </span>COVID-19 Dashboard</h1>
                 </div>
+                
                 <div className="table-responsive">
                     <table className="table table-hover">
                         <thead className="thead-dark">

@@ -254,7 +254,7 @@ const Map = () => {
   };
 
   return (
-    <div>
+    <div >
       <div ref={mapContainerRef} className='map-container' />
       <Legend active={active} stops={active.stops} />
       <Optionsfield
