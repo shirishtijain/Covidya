@@ -57,7 +57,7 @@ function Guidelines(){
 <h1 ><strong>Guidelines and Protocols</strong></h1>
 <br/>
 
-<Accordion defaultActiveKey="0" flush>
+<Accordion  flush>
   <Accordion.Item eventKey="0">
     <Accordion.Header>Make your environment safer</Accordion.Header>
     <Accordion.Body>
