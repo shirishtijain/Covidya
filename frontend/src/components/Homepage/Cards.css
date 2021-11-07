@@ -1,0 +1,19 @@
+.card {
+    border: 2px solid;
+}
+.Card1{
+    background-color: rgb(88, 175, 247);
+}
+/* final */
+
+.cards{
+    display:flex;
+    /* flex-direction: row; */
+}
+/* .dropd{
+    display: flex;
+    margin: auto;
+} */
+/* .gif{
+    background: url("covid-india-2.gif");
+} */
