@@ -1,0 +1,24 @@
+
+
+.detailsBtn{
+padding:8px;
+height: 28px;
+width: 32px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.btns{
+    display:flex;
+    flex-direction: row;
+
+}
+
+.card{
+    border:1px solid #999;
+    border-radius: 10px;
+    margin:10px;
+}

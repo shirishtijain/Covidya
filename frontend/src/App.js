@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Map from './components/Map/Map';
 import Footer from "./components/Footer/Footer"
-
+import Dashboard from './components/landing/Dashboard'
 import "./App.css";
 import { Stats } from './components/Homepage/Stats';
 
@@ -24,7 +24,10 @@ function App() {
     </Route>
     <Route path="/register">
       <Register />
-          </Route>
+    </Route>
+    <Route path="/resources">
+    <Dashboard/>
+    </Route>
         
     <Route path="/data">
       <Stats />
