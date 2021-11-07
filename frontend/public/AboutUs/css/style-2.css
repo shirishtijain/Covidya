@@ -113,7 +113,7 @@ body {
 
 .page-header-drawer .navbar-mainmenu .mainmenu-content {
   background: #f0f0f0;
-  background: url("../img/bg-white.jpg");
+  background: url("../aboutusBG.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
@@ -135,10 +135,11 @@ body {
 
 /* 3. sections */
 .section-home .home-cover {
-  background: url("../img/bg-white-mobile.jpg");
+  background: url("../aboutusBG.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.6; }
+  opacity: 0.6; 
+}
   @media (min-width: 768px) {
     .section-home .home-cover {
       background: url("../aboutusBG.jpg");
