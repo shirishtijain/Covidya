@@ -18,7 +18,7 @@ export const Stats = () => {
            
           
           setData(myJson.regionData);
-          console.log(data)
+         
           
         });
            
