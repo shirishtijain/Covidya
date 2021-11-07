@@ -1,16 +1,9 @@
 import React,{useEffect,useState} from 'react'
-// import axios from 'axios';
 
-// import logo from './logo.svg';
-// import './App.css';
-// import React from 'react';
-// mdb
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'mdbreact/dist/css/mdb.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './cardstyle.css';
-// import 'react-bootstrap';
+import './Cards.css';
+
 import { Card, CardGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
@@ -18,7 +11,7 @@ const headers={
     'Access-Control-Allow-Origin':'*',
 }
 
-export const Stats = () => {
+function Cards() {
     const [data,setData]=useState([]);
 
     const fetchData = async () => {
@@ -29,19 +22,17 @@ export const Stats = () => {
     .then(function(myJson) {
        
       
-      setData(myJson.regionData);
-      console.log(data)
+      setData(myJson);
+     
       
     });
        
     }
-
-
-useEffect(() => {
-    fetchData();
-}, [])
-return (
-
+    useEffect(() => {
+        fetchData();
+    }, [])
+    return (
+      
 <div id="items" >
     {/* {
         data.map((d,idx)=>{
@@ -116,7 +107,10 @@ return (
         })
     } */}
 </div>
-
-
-)
+    )
 }
+
+export default Cards
+
+
+

@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Map from './components/Map/Map';
 import Footer from "./components/Footer/Footer"
 import Dashboard from './components/landing/Dashboard'
+import Card from './components/Homepage/Cards';
 import "./App.css";
 import { Stats } from './components/Homepage/Stats';
 
@@ -29,7 +30,8 @@ function App() {
     <Dashboard/>
     </Route>
         
-    <Route path="/data">
+          <Route path="/data">
+            <Card/>
       <Stats />
     </Route>
    
