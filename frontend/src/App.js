@@ -8,7 +8,7 @@ import Dashboard from './components/landing/Dashboard'
 import Card from './components/Homepage/Cards';
 import "./App.css";
 import { Stats } from './components/Homepage/Stats';
-
+import Guidelines from './components/Guidelines/Guidelines';
 
 function App() {
   return (
@@ -28,6 +28,10 @@ function App() {
     </Route>
     <Route path="/resources">
     <Dashboard/>
+    </Route>
+
+    <Route path="/guidelines">
+      <Guidelines />
     </Route>
         
           <Route path="/data">
