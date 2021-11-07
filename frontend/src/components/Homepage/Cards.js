@@ -37,10 +37,10 @@ function Cards() {
     {/* {
         data.map((d,idx)=>{
             return( */}
-                <div id="cards " className="d-flex flex-row" >
+                <div id="cards" >
                             {/* className="d-flex flex-row" */}
                             
-                            <div className="card text-white bg-primary mb-3 h-20" id="cardOne" >
+                            <div className="card text-white bg-primary mb-3" id="cardOne" >
                                 <div className="card-header">Infected</div>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.totalCases}</h5>
@@ -52,7 +52,7 @@ function Cards() {
                                 </div>
                             </div>
 
-                            <div className="card text-white bg-warning mb-3" style={{ width: '25%' }} >
+                            <div className="card text-white bg-warning mb-3"  >
                                 <div className="card-header">Active</div>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.activeCases}</h5>
@@ -65,7 +65,7 @@ function Cards() {
                                 </div>
                             </div>
 
-                            <div className="card text-white bg-success mb-3" style={{ width: '25%' }} >
+                            <div className="card text-white bg-success mb-3"  >
                                 <div className="card-header">Recovered</div>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.recovered}</h5>
@@ -77,7 +77,8 @@ function Cards() {
                                 </div>
                             </div>
 
-                            <div className="card text-white bg-danger mb-3" style={{ width: '25%' }}>
+
+                            <div className="card text-white bg-danger mb-3" >
                                 <div className="card-header">Death</div>
                                 <div className="card-body">
                                     <h5 className="card-title">{data.deaths}</h5>

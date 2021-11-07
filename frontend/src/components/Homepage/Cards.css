@@ -1,15 +1,31 @@
 .card {
     border: 2px solid;
+   width: 25% ;
+   display: flex;
 }
 .Card1{
     background-color: rgb(88, 175, 247);
 }
 /* final */
 
-.cards{
+#cards{
     display:flex;
-    /* flex-direction: row; */
+    flex-direction: row;
+    flex-wrap: nowrap;
+
 }
+
+
+
+@media (max-width: 480px) {
+   #cards{ 
+       flex-direction: column;
+       flex-wrap: wrap;
+    }
+    .card{
+        width:100%
+    }
+  }
 /* .dropd{
     display: flex;
     margin: auto;
