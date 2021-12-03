@@ -16,6 +16,8 @@ class Dashboard extends Component {
     };
   }
 
+
+
   
 
   handleNavChange = (nav) => {
@@ -90,6 +92,7 @@ class Dashboard extends Component {
                                 verified={res.verificationData}
                                 phoneno={res.contact}
                                 likes={res.likes}
+                                id={res._id}
                                 key={res._id} />
                 )
               })

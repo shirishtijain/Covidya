@@ -4,6 +4,7 @@ const router = express.Router();
 const {
     getResources,
     newResource,
+    handleButton
     // getOxygenResources,
     // getPlasmaResources,
     // getBedResources,
@@ -14,7 +15,9 @@ const {
 const { isAuthenticatedUser } = require('../middlewares/auth');
 
 router.route('/resources/:type').get(getResources);
+router.route('/resources/:opt/:id').post(handleButton)
 router.route('/resource/new').post(isAuthenticatedUser, newResource);
+
 // router.route('resources/oxygen').get(getOxygenResources);
 // router.route('resources/plasma').get(getPlasmaResources);
 // router.route('resources/bed').get(getBedResources);

@@ -31,3 +31,15 @@ exports.getResources = async (req, res, next) => {
     })
 
 }
+
+exports.handleButton=async (req,res,next) =>{
+    const {opt , id} =req.params;
+
+    const resource=await Resource.findById(id);
+    const likes=resource.likes + (opt==0?1:-1);
+    resource.likes=likes;
+    await resource.save();
+    res.status(200).json({
+        success:true
+    })
+}
