@@ -19,8 +19,8 @@ import { Card, CardGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 function Guidelines(){
     return(
-        <div id="guidelined">
-<Carousel variant="dark" fade>
+<div id="guidelined" className="mx-5">
+<Carousel variant="dark" fade className="mx-5">
   <Carousel.Item>
     <img className="d-block w-100" src="https://images.unsplash.com/photo-1608451643043-6a8eebc527ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80" alt="First slide"/>
     <Carousel.Caption>
@@ -57,7 +57,7 @@ function Guidelines(){
 <h1 ><strong>Guidelines and Protocols</strong></h1>
 <br/>
 
-<Accordion  flush>
+<Accordion defaultActiveKey="0" flush className="mx-5">
   <Accordion.Item eventKey="0">
     <Accordion.Header>Make your environment safer</Accordion.Header>
     <Accordion.Body>
@@ -116,8 +116,8 @@ The Strategic Preparedness and Response Plan 2021 (SPRP2021) builds on what we h
   </Accordion.Item>
 </Accordion>
 
-<h1><strong> World Health Organisation says......</strong></h1>
-<Col className="m-auto">
+<h1><strong> World Health Organisation says...</strong></h1>
+<Col className="mx-auto">
   <img
     className="d-block mx-auto img-fluid w-100"
     src={"https://www.who.int/images/default-source/wpro/countries/malaysia/infographics/mask/clothing-masks-infographic--web---part-1.png?sfvrsn=53fc824f_2"}

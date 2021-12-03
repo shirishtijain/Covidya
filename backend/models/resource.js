@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const resourceSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: [true, 'Please enter the title'],
+        required: true
         
     },
     location: {
         type: String,
-        required: [true, 'Please enter the location of the resource']
+        required: true
     },
     description: {
         type: String,
@@ -27,11 +27,16 @@ const resourceSchema = new mongoose.Schema({
         default: 0,
         
     },
+    resType: {
+        type:String,
+       enum:["Oxygen", "Plasma", "Medicine", "Beds"],
+       required: true
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        // required: true,
         ref: 'User'
-    },
+    }
 
 });
 

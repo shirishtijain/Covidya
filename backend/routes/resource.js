@@ -13,7 +13,7 @@ const {
 
 const { isAuthenticatedUser } = require('../middlewares/auth');
 
-router.route('/resources').get(getResources);
+router.route('/resources/:type').get(getResources);
 router.route('/resource/new').post(isAuthenticatedUser, newResource);
 // router.route('resources/oxygen').get(getOxygenResources);
 // router.route('resources/plasma').get(getPlasmaResources);

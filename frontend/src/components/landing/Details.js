@@ -4,7 +4,7 @@ import "./Details.css";
 function Details({title,info,phoneno,verified,likes}) {
     return (
       <>
-<Card class="mt-3 mr-2 card mb-3">
+<Card class="mt-3 mr-2 card mb-3 flex flex-row" style={{width:"100%"}}>
   <Card.Body>
             <Card.Title>{title}</Card.Title>
     <Card.Text>

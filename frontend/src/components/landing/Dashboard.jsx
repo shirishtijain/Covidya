@@ -5,20 +5,38 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Details from "./Details";
 import CommunityForm from "../CommunityForm/RescForm"
+import axios from "axios";
 import "./Dashboard.css";
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedNav: "Community"
+      selectedNav: "Community",
+      data:[]
     };
   }
 
-  componentDidMount() {}
+  
 
   handleNavChange = (nav) => {
-    this.setState({ selectedNav: nav });
+    if(nav!="Community"){
+    axios.get("http://localhost:3000/api/v1/resources/"+nav)
+    .then(res=>{
+    this.setState({ 
+      selectedNav: nav ,
+      data: res.data.resources
+    })}).catch(err=> console.log(err))
+    }else{
+      this.setState({selectedNav:nav})
+    }
   };
+
+  componentDidMount() {
+  }
+
+  detailsList(){
+    return 
+  }
 
   render() {
     return (
@@ -34,13 +52,9 @@ class Dashboard extends Component {
                   defaultActiveKey="All"
                   onSelect={this.handleNavChange}
                 >
-                  <Nav.Link eventKey="Community">
-                   Community
-                  </Nav.Link>
+                  <Nav.Link eventKey="Community">Community</Nav.Link>
                   <Nav.Link eventKey="Oxygen">Oxygen</Nav.Link>
-                  <Nav.Link eventKey="Plasma">
-                    Plasma
-                  </Nav.Link>
+                  <Nav.Link eventKey="Plasma">Plasma </Nav.Link>
                   <Nav.Link eventKey="Medicine">Medicine</Nav.Link>
                   <Nav.Link eventKey="Beds">Beds</Nav.Link>
                 </Nav>
@@ -53,34 +67,35 @@ class Dashboard extends Component {
         (this.state.selectedNav === 'Oxygen')
         
                     ? <div>
-                      <Details
-                      title="Roche's Antibody Cocktail Available"
-                      info="Alongwith AMPHOTERICIN B, TOCILIZUMAB, REMDESIVIR and all other COVID equipment and medicines available. Email ID- ravi.ravispecialitiespharma@gmail.com"
-                      verified="Verified at 27/05/2021 12:45 PM"
-                      phoneno="9994330921"
-                        likes="4" />
-                      <Details
-                      title="Oxygen Beds Available"
-                      info="At Atmakur Hospital, Nellore."
-                      verified="Verified at 23/05/2021 12:55 PM"
-                      phoneno="8985501725"
-                        likes="7" />
-                      <Details
-                      title="Oxygen and ICU Beds Available"
-                      info="At Lifeline Medicure Hospital, Secunderabad."
-                      verified="Verified at 27/05/2021 12:45 PM"
-                      phoneno="9994330921"
-                      likes="4"/>
-                    
-                    
-                    
+                      
+                     Oxygen
+                                  
                     </div>
                     : this.state.selectedNav === 'Medicine' ? <div>Medicine</div>
                     : this.state.selectedNav === 'Beds' ? <div>Beds</div>
                     : this.state.selectedNav === 'Community' ? <CommunityForm/>
                     : this.state.selectedNav === 'Plasma' ? <div>Plasma</div>
                     :<div>All</div>
+
       }
+              </div>
+              <div>
+              {this.state.selectedNav==='Community'?"":
+
+              this.state.data[0].map((res)=>{
+                return(
+                  <Details
+                                title={res.title}
+                                info={res.description}
+                                verified={res.verificationData}
+                                phoneno={res.contact}
+                                likes={res.likes}
+                                key={res._id} />
+                )
+              })
+              
+              }
+
               </div>
             </Col>
           </Row>

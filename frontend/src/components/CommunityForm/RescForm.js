@@ -5,7 +5,7 @@ const RescForm = () => {
     return (
         <div className="resource">
    <Form className="form w-75">
-        
+    {/* add margin top and bottom */}
   <Form.Group className="mb-3" controlId="formTitle">
     <Form.Label>Resource Name</Form.Label>
     <Form.Control type="text" placeholder="Enter resource name" />
@@ -27,6 +27,8 @@ const RescForm = () => {
     <Form.Label>Contact Details</Form.Label>
     <Form.Control type="text" placeholder="Phone number" />
   </Form.Group>
+
+  {/* to add: resource type */}
 
   <Button variant="primary" type="submit">
     Submit

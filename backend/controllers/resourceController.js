@@ -16,9 +16,17 @@ exports.newResource = async (req, res, next) => {
 
 // Get all resources   =>   /api/v1/resources
 exports.getResources = async (req, res, next) => {
-    const resources = await Resource.find();
+
+    const {type}= req.params;
+   const resources=[];
+    await Resource.find({resType:type}).then(
+        res=>{
+            resources.push(res)
+        }
+    ).catch(err=>console.log(err)); 
+    ;  
+
     res.status(200).json({
-        success: true,
         resources
     })
 
