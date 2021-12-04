@@ -1,9 +1,11 @@
 const User=require("../models/user");
 const ErrorHandler=require("../utils/errorHandler");
 const sendToken = require('../utils/jwtToken');
+const path = require('path');
 
 exports.registerUser=async (req,res,next)=>{
-    const {name,email,password}=req.body;
+    const { name, email, password } = req.body;
+    console.log(req.body);
 
     const user = await User.create({
         name,
@@ -19,7 +21,8 @@ exports.registerUser=async (req,res,next)=>{
 //Login user
 exports.loginUser=async (req,res,next)=>{
     const {email,password}=req.body;
-    console.log(req.body);
+    console.log(req.body.email);
+    console.log(req.body.password)
 
     //check if email and password is entered by the user
     if(!email || !password){
@@ -29,7 +32,7 @@ exports.loginUser=async (req,res,next)=>{
     const user=await User.findOne({email}).select('+password');
 
     if(!user){
-     return next(new ErrorHandler('Please enter valid email and password',401));
+     return next(new ErrorHandler('Please enter correct email and password',401));
 
     }
 
@@ -52,4 +55,11 @@ exports.logoutUser=async (req,res,next)=>{
         success: true,
         message: 'Logged out'
     })
+}
+
+
+exports.generalRoute = async (req, res, next) => {
+    
+    return res.redirect("/map");
+
 }

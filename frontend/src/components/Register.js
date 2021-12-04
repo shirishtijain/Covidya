@@ -1,15 +1,53 @@
-import React,{ useEffect, useState} from 'react'
-import {Form,Button} from 'react-bootstrap';
+import React,{useState,useEffect,Fragment} from 'react'
+import { Form, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import Loader from './layout/Loader';
+
+
+import { useDispatch,useSelector } from 'react-redux';
+import { register, clearErrors } from "../actions/userActions";
+
+
+
 import "./Register.css";
 
 
-const Register = () => {
- 
+const Register = ({ history }) => {
+  const [name,setName]= useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  
+
+
+  
+  const dispatch = useDispatch();
+
+
+  const { isAuthenticated, error, loading } = useSelector(state => state.auth);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push('/resources');
+    }
+    if (error) {
+   
+      dispatch(clearErrors());
+    }
+  },[dispatch,isAuthenticated,error,history])
+   
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+  
+
+    dispatch(register(name,email,password))
+}
 
     return (
         <div className="register">
         <h1>Register</h1>
-        <Form className="form">
+        <Form className="form" onSubmit={submitHandler}>
         <Form.Group className="mb-3" >
    <Form.Label>Name</Form.Label>
             <Form.Control
@@ -17,6 +55,8 @@ const Register = () => {
                                 id="name_field"
                                 className="form-control"
                                 name='name'
+                                value={name}
+                                onChange={(e)=>setName(e.target.value)}
                                   />
  </Form.Group>
        
@@ -27,7 +67,8 @@ const Register = () => {
                                 id="email_field"
                                 className="form-control"
                                 name='email'
-                               
+                                value={email}
+                                onChange={(e)=>setEmail(e.target.value)}
             />
    <Form.Text className="text-muted">
      We'll never share your email with anyone else.
@@ -41,6 +82,8 @@ const Register = () => {
                                 id="password_field"
                                 className="form-control"
                                 name='password'
+                                value={password}
+                                onChange={(e)=>setPassword(e.target.value)}
                                
             />
  </Form.Group>
@@ -48,7 +91,8 @@ const Register = () => {
           <Button variant="primary" type="submit"
             id="register_button"
                             type="submit"
-                            className="btn btn-block py-3"
+            className="btn btn-block py-3"
+          
                          
           >
    Submit

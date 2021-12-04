@@ -20,12 +20,11 @@ const auth = require("./routes/auth");
 const resource = require("./routes/resource");
 
 
+
 app.use('/api/v1', auth);
 app.use('/api/v1', resource);
 
-app.listen(3000,()=>{
-    console.log(`server started on port :3000`);
 
-})
+
 
 module.exports = app
