@@ -12,7 +12,11 @@ const auth = require("./routes/auth");
 const resource = require("./routes/resource");
 
 
+
 app.use('/api/v1', auth);
 app.use('/api/v1', resource);
+
+
+
 
 module.exports = app

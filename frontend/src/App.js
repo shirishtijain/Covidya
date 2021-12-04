@@ -37,7 +37,8 @@ function App() {
           <Route path="/data">
             <Card/>
       <Stats />
-    </Route>
+      </Route>
+    
    
   
    
