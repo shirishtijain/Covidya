@@ -19,8 +19,7 @@ const resourceSchema = new mongoose.Schema({
         default: Date.now
     },
     contact: {
-        type: Number,
-        
+        type: Number,     
     },
     likes: {
         type: Number,

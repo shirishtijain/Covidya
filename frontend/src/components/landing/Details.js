@@ -10,24 +10,24 @@ function Details({title,info,phoneno,verified,likes,id}) {
   const onLike=(e)=>{
     e.preventDefault();
     setlike(like+1)
-    axios.post("http://localhost:3000/api/v1/resources/0/"+id).then(res=>console.log(res)).catch(err=>console.log(err));
+    axios.post("http://localhost:4000/api/v2/resources/0/"+id).then(res=>console.log(res)).catch(err=>console.log(err));
   }
   
   const onDislike=(e)=>{
     e.preventDefault();
     setlike(like-1)
-    axios.post("http://localhost:3000/api/v1/resources/1/"+id).then(res=>console.log(res)).catch(err=>console.log(err));
+    axios.post("http://localhost:4000/api/v2/resources/1/"+id).then(res=>console.log(res)).catch(err=>console.log(err));
   }
 
 
     return (
       <>
-<Card class="mt-3 mr-2 card mb-3 flex flex-row" style={{width:"100%"}}>
+<Card class="mt-3 mr-2 card mb-3 flex flex-row" style={{width:"75%"}}>
   <Card.Body>
             <Card.Title>{title}</Card.Title>
     <Card.Text>
     {info}
-              <p>{verified}</p>
+              <p class="text-muted">Verification Token: {verified}</p>
               <p>{phoneno}</p>
     </Card.Text>
     <div class="btns">
