@@ -21,8 +21,9 @@ class Dashboard extends Component {
   
 
   handleNavChange = (nav) => {
+    console.log(nav)
     if(nav!="Community"){
-    axios.get("http://localhost:3000/api/v1/resources/"+nav)
+    axios.get("http://localhost:4000/api/v2/resources/"+nav)
     .then(res=>{
     this.setState({ 
       selectedNav: nav ,

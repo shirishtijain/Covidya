@@ -15,7 +15,7 @@ function App() {
   
     <Router>
 <div className="app">
-  
+  <Navbar/>
   <Switch>
   <Route path="/map">
       <Map/>
