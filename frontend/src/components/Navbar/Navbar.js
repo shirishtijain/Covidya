@@ -5,7 +5,7 @@ function NavbarMain() {
 
         <Navbar bg="primary" variant="dark">
         <Container>
-        <Navbar.Brand href="../AboutUs/aboutUs.html">Navbar</Navbar.Brand>
+        <Navbar.Brand href="../AboutUs/aboutUs.html">CoVidya</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="../AboutUs/aboutUs.html">Home</Nav.Link>
           <Nav.Link href="/data">Dashboard</Nav.Link>
