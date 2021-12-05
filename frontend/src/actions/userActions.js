@@ -17,6 +17,7 @@ import axios from "axios";
 
 export const login = (email, password) => async (dispatch) => {
     try {
+        console.log(email, password)
         dispatch({ type: LOGIN_REQUEST })
         
         const config = {
@@ -25,8 +26,8 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('/api/v1/login', { email, password }, config);
-
+        const { data } = await axios.post('http://localhost:4000/api/v1/login', { email, password }, config);
+        console.log(data);
         dispatch({
             type: LOGIN_SUCCESS,
             payload:data.user
@@ -57,7 +58,7 @@ export const register = (name,email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('/api/v1/register', {name, email, password}, config)
+        const { data } = await axios.post('http://localhost:4000/api/v1/register', {name, email, password}, config)
         console.log(data);
         dispatch({
             type: REGISTER_USER_SUCCESS,
@@ -69,6 +70,7 @@ export const register = (name,email, password) => async (dispatch) => {
             type: REGISTER_USER_FAIL,
             payload: error.response.data.message
         })
+        console.log(error);
     }
 }
 

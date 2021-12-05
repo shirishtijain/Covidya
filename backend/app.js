@@ -11,7 +11,19 @@ connectDatabase();
 
 var cors = require('cors')
 
+app.get('/', (req, res) => res.send('API Running'))
+
 app.use(cors())
+
+// Init Middleware
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, x-auth-token'
+    );
+    next();
+  });
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));

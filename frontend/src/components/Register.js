@@ -1,6 +1,7 @@
 import React,{useState,useEffect,Fragment} from 'react'
 import { Form, Button } from 'react-bootstrap';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import Loader from './layout/Loader';
 
 
@@ -12,7 +13,7 @@ import { register, clearErrors } from "../actions/userActions";
 import "./Register.css";
 
 
-const Register = ({ history }) => {
+const Register = () => {
   const [name,setName]= useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,6 +23,7 @@ const Register = ({ history }) => {
 
   
   const dispatch = useDispatch();
+  let history = useHistory();
 
 
   const { isAuthenticated, error, loading } = useSelector(state => state.auth);
@@ -39,7 +41,7 @@ const Register = ({ history }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-  
+    console.log(name, email, password);
 
     dispatch(register(name,email,password))
 }
