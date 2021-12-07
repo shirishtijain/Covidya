@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import "./Login.css";
 import Loader from './layout/Loader';
-
+import {useHistory} from "react-router-dom"
 
 import { useDispatch,useSelector } from 'react-redux';
 import { login, clearErrors } from "../actions/userActions";
@@ -11,12 +11,12 @@ import { login, clearErrors } from "../actions/userActions";
 
 
 
-const Login = ({history}) => {
+const Login = ({login_2}) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  
+  let history = useHistory();
   const dispatch = useDispatch();
 
 
@@ -24,7 +24,7 @@ const Login = ({history}) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push('/resorces');
+      history.push('/resources');
     }
     if (error) {
    
@@ -35,6 +35,7 @@ const Login = ({history}) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
+    login_2();
   }
 
   

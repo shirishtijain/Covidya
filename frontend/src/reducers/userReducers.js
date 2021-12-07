@@ -39,7 +39,7 @@ export const authReducer = (state = { user: {} }, action) => {
                 ...state,
                 error:action.payload
             }
-        case LOGIN_FAIL:
+        
         case REGISTER_USER_FAIL:
            
             return {
