@@ -21,9 +21,6 @@ function NavbarMain({isAuthenticated,logout_2,login_2}) {
       
   }
 
- 
- 
-
     return (
 
         <Navbar bg="primary" variant="dark">
@@ -49,7 +46,6 @@ function NavbarMain({isAuthenticated,logout_2,login_2}) {
         )} */}
             
         <Nav className="ml-auto">
-  {isAuthenticated && (<Button onClick={handleLogout} className="btn btn-light mr-auto">Logout</Button>  )}
   {!isAuthenticated && (  <Nav.Link href="/login">Login</Nav.Link>  )}
   {!isAuthenticated && (   <Nav.Link href="/register">Register</Nav.Link>)}
 </Nav>
@@ -59,6 +55,8 @@ function NavbarMain({isAuthenticated,logout_2,login_2}) {
 
         </Nav>
         </Container>
+        {isAuthenticated && (<Button onClick={handleLogout} className="btn btn-light mr-5">Logout</Button>  )}
+
       </Navbar>
   
     )
